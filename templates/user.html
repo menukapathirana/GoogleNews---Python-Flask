@@ -1,0 +1,200 @@
+{% extends 'layout.html' %} {% block body %}
+
+    {#    <div class="main-content-wrapper section-padding-100">#}
+    {#    <div class="container">#}
+    {#            <div class="row justify-content-center">#}
+    {#                 <body1>#}
+    {#    <main class="profile">#}
+    {#  <div class="profile-bg"></div>#}
+    {#  <section class="container1">#}
+    {#    <aside class="profile-image">#}
+    {#      <a class="camera" href="#">#}
+    {#                    <i class="fas fa-camera"></i>#}
+    {#                </a>#}
+    {#    </aside>#}
+    {#    <section class="profile-info">#}
+    {#        {% for userdetails in userdetails %}#}
+    {#      <h1 class="first-name">{{ userdetails.name }}</h1>#}
+    {#      <h1 class="second-name">{{ userdetails.name }}</h1>#}
+    {#      <h2>ABOUT</h2>#}
+    {#      <p>#}
+    {#        hello hello, I'm {{ userdetails.name }}, artist and developer student at Vitoria university; born to develop softwares and don't read rest of the details. But if you need any help, we always happy to help.#}
+    {#      </p>#}
+    {##}
+    {#      <aside class="social-media-icons">#}
+    {#        <a href="https://twitter.com/login" target="_blank">#}
+    {#                        <i class="fab fa-twitter">Edit Profile</i>#}
+    {#                    </a>#}
+    {#        <a href="https://login.vu.edu.au" target="_blank">#}
+    {#                        <i class="fab fa-codepen">Edit Preferences</i>#}
+    {#                    </a>#}
+    {#        <a href="https://login.vu.edu.au" target="_blank">#}
+    {#                        <i class="fab fa-github"></i>#}
+    {#                    </a>#}
+    {##}
+    {#        <a href="https://login.vu.edu.au" target="_blank">#}
+    {#                        <i class="fab fa-medium"></i>#}
+    {#                    </a>#}
+    {#      </aside>#}
+    {#         {% endfor %}#}
+    {#    </section>#}
+    {#  </section>#}
+    {#  <section class="statistics">#}
+    {#    <p><strong>{{ userdetails.email }}</strong> </p>#}
+    {#    <p><strong>184</strong> Following</p>#}
+    {#    <p><strong>6</strong> Likes</p>#}
+    {#  </section>#}
+    {#  <button class="icon close"></button>#}
+    {#</main>#}
+    {#</body1>#}
+    {#                <div class="col-12 col-lg-8">#}
+    {#                </div>#}
+    {#            </div>#}
+    {#    </div>#}
+    {##}
+    {#    </div>#}
+
+
+    <div class="main-content-wrapper section-padding-100">
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- ============= Post Content Area Start ============= -->
+                <div class="col-12 col-lg-8">
+                    <div class="post-content-area mb-50">
+                        <!-- Catagory Area -->
+                        <div class="world-catagory-area">
+                            <body1>
+                                <main class="profile">
+                                    <div class="profile-bg"></div>
+                                    <section class="container1">
+                                        <aside class="profile-image">
+                                            <a class="camera" href="#">
+                                                <i class="fas fa-camera"></i>
+                                            </a>
+                                        </aside>
+                                        <section class="profile-info">
+                                            {% for userdetails in userdetails %}
+                                                <h1 class="first-name">{{ userdetails.name }}</h1>
+                                                {#      <h1 class="second-name">{{ userdetails.name }}</h1>#}
+                                                <h2>ABOUT</h2>
+                                                <p>
+                                                    hello hello, I'm {{ userdetails.name }}, artist and developer
+                                                    student at Vitoria university; born to develop softwares and don't
+                                                    read rest of the details. But if you need any help, we always happy
+                                                    to help.
+                                                </p>
+
+                                                <aside class="social-media-icons">
+                                                    <a href="https://twitter.com/login" target="_blank">
+                                                        <i class="fab fa-twitter">Edit Profile</i>
+                                                    </a>
+                                                    <a href="updatepreferences" target="_blank">
+                                                        <i class="fab fa-codepen">Edit Preferences</i>
+                                                    </a>
+                                                    {#        <a href="https://login.vu.edu.au" target="_blank">#}
+                                                    {#                        <i class="fab fa-github"></i>#}
+                                                    {#                    </a>#}
+                                                    {##}
+                                                    {#        <a href="https://login.vu.edu.au" target="_blank">#}
+                                                    {#                        <i class="fab fa-medium"></i>#}
+                                                    {#                    </a>#}
+                                                </aside>
+                                            {% endfor %}
+                                        </section>
+                                    </section>
+                                    {#  <section class="statistics">#}
+                                    {#    <p><strong>{{ userdetails.email }}</strong> </p>#}
+                                    {#    <p><strong>184</strong> Following</p>#}
+                                    {#    <p><strong>6</strong> Likes</p>#}
+                                    {#  </section>#}
+                                    {#  <button class="icon close"></button>#}
+                                </main>
+                            </body1>
+                        </div>
+
+
+                        <!-- Catagory Area -->
+                        <div class="world-catagory-area mt-50">
+                            {#Another body#}
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ========== Sidebar Area ========== -->
+                <div class="col-12 col-md-8 col-lg-4">
+
+
+                    <div class="post-sidebar-area wow fadeInUpBig" data-wow-delay="0.2s">
+
+
+                        <div class="widget-content">
+
+                            <div class="panel panel-primary" id="result_panel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Recently Liked News</h3>
+                                </div>
+
+                                <div class="panel-body">
+                                    {% for urhist in urhistory %}
+                                        <a class="list-group-item" href="#"> {{ urhist.news_title }}</a>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+                        <div class="copywrite-text mt-30">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <ul class="footer-menu d-flex justify-content-between">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="#">Video</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <h5>Subscribe</h5>
+                        <form action="#" method="post">
+                            <input type="email" name="email" id="email" placeholder="Enter your mail">
+                            <button type="button"><i class="fa fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ***** Footer Area End ***** -->
+
+{% endblock %}

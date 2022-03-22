@@ -1,0 +1,133 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1>Welcome to VU News Recommendation</h1>
+
+
+
+
+
+
+            </div>
+
+
+    {% if session.logged_in == NULL %}
+        <a href="/register" class="btn btn-primary btn-lg">Register</a>
+        <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% else %}
+        <div class="row justify-content-center">
+        <!-- ========== Single Blog Post ========== -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-post post-style-3 mt-50 wow fadeInUpBig" data-wow-delay="0.2s">
+                <!-- Post Thumbnail -->
+                <div class="post-thumbnail">
+                    <img src="static/img/blog-img/b4.jpg" alt="">
+                    <!-- Post Content -->
+                    <div class="post-content d-flex align-items-center justify-content-between">
+                        <!-- Catagory -->
+                        <div class="post-tag"><a href="/dashboard">News Dashboard</a></div>
+                        <!-- Headline -->
+                        <a href="/dashboard" class="headline">
+                            <h5>View News Dashboard</h5>
+                        </a>
+                        <!-- Post Meta -->
+                        <div class="post-meta">
+                            <p><a href="#" class="post-author"></a> <a href="#" class="post-date"></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ========== Single Blog Post ========== -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-post post-style-3 mt-50 wow fadeInUpBig" data-wow-delay="0.6s">
+                <!-- Post Thumbnail -->
+                <div class="post-thumbnail">
+                    <img src="static/img/blog-img/b6.jpg" alt="">
+                    <!-- Post Content -->
+                    <div class="post-content d-flex align-items-center justify-content-between">
+                        <!-- Catagory -->
+                        <div class="post-tag"><a href="articles">Latest News</a></div>
+                        <!-- Headline -->
+                        <a href="/articles" class="headline">
+                            <h5>Latest News for you</h5>
+                        </a>
+                        <!-- Post Meta -->
+                        <div class="post-meta">
+                            <p><a href="#" class="post-author"></a> <a href="#" class="post-date"></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== Single Blog Post ========== -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="single-blog-post post-style-3 mt-50 wow fadeInUpBig" data-wow-delay="0.4s">
+                <!-- Post Thumbnail -->
+                <div class="post-thumbnail">
+                    <img src="static/img/blog-img/b5.jpg" alt="">
+                    <!-- Post Content -->
+                    <div class="post-content d-flex align-items-center justify-content-between">
+                        <!-- Catagory -->
+                        <div class="post-tag"><a href="/user">User Profile</a></div>
+                        <!-- Headline -->
+                        <a href="/user" class="headline">
+                            <h5>View your Profile</h5>
+                        </a>
+                        <!-- Post Meta -->
+                        <div class="post-meta">
+                            <p><a href="#" class="post-author"></a> <a href="#" class="post-date"></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+
+
+
+ <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+                        <div class="copywrite-text mt-30">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <ul class="footer-menu d-flex justify-content-between">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="#">Video</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <h5>Subscribe</h5>
+                        <form action="#" method="post">
+                            <input type="email" name="email" id="email" placeholder="Enter your mail">
+                            <button type="button"><i class="fa fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ***** Footer Area End ***** -->
+
+{% endblock %}

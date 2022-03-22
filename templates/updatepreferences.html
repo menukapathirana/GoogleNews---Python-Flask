@@ -1,0 +1,88 @@
+{% extends 'layout.html' %} {% block body %}
+    <div class="row main">
+        <h1>Select Your <span>Preferences</span></h1>
+
+        {% set pref = upprefer['preferences'].split(',') %}
+
+        <form action="" method="post">
+
+            <div class="col-sm-4 col-xs-12">
+                <div data-toggle="buttons">
+
+                    {% for hdrTitle in pref %}
+                        {% if hdrTitle  == 'Business' %}
+                            <label class="btn btn-block btn-danger">
+                                <input type="checkbox" name="hello" value="Business" autocomplete="off">Business
+                            </label>
+                        {% else %}
+                            <label class="btn btn-block btn-success">
+                                <input type="checkbox" name="hello" value="Business" autocomplete="off">Business
+                            </label>
+                        {% endif %}
+                    {% endfor %}
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Technology" autocomplete="off">Technology
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Education" autocomplete="off">Education
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Finance" autocomplete="off">Finance
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Games" autocomplete="off">Games
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+
+                <div data-toggle="buttons">
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Health" autocomplete="off">Health
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Science" autocomplete="off">Science
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Sports" autocomplete="off">Weather
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Sports" autocomplete="off">Sports
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Environmental" autocomplete="off">Environmental
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+
+                <div data-toggle="buttons">
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Politics" autocomplete="off">Politics
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Arts" autocomplete="off">Arts
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="World" autocomplete="off">World
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Local" autocomplete="off">Local
+                    </label>
+                    <label class="btn btn-block btn-success">
+                        <input type="checkbox" name="hello" value="Entertainment" autocomplete="off">Entertainment
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xs-12">
+                <div class="survey">
+
+                    <input type="submit" id="mm" name="submit_prefer" class="btn world-btn" value="Add Preference"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+{% endblock %}

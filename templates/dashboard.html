@@ -1,0 +1,421 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{#    <h1>Dashboard <a href="/user" class="">{{ session.username }} <h1>#}
+
+
+
+
+    <div class="main-content-wrapper section-padding-100">
+
+{#    Feedback#}
+{#    <button type="button" class="slide-toggle">Feedback</button>#}
+{# <div class="box">#}
+{#        <div class="box-inner">Are you happy with this recommendation?</div>#}
+{#        <form>#}
+{#            <table align='center'>#}
+{#                <tr>#}
+{#                    <td><input type="submit"/></td>#}
+{#                    <td><input type="button" value="Clear"/></td>#}
+{#                </tr>#}
+{#            </table>#}
+{#        </form>#}
+{#    </div>#}
+
+      {#    Feedback#}
+                    <button type="button" class="slide-toggle">Feedback</button>
+                    <div class="boxfeedback">
+                        <div class="box-inner">Are you happy with this recommendation?</div>
+                        <table align='center'>
+                            <tr>
+                                <td>
+
+                                    <input id="btnyes" type="submit" class="btn world-btn" value="Yes">
+                                </td>
+                                <td>
+
+                                    <input id="btnno" type="submit" class="btn world-btn" value="No">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- ============= Post Content Area Start ============= -->
+                <div class="col-12 col-lg-8">
+                    <div class="post-content-area mb-50">
+                        <!-- Catagory Area -->
+                        <div class="world-catagory-area">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="title">Recommended News</li>
+
+
+                                {% for hdrTitle in jsoheader %}
+
+                                    {% if loop.index  == 1 %}
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="tab1" data-toggle="tab" href="#world-tab-1"
+                                               role="tab" aria-controls="world-tab-1"
+                                               aria-selected="true">{{ hdrTitle }}</a>
+                                        </li>
+
+                                    {% else %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="tab{{ loop.index }}" data-toggle="tab"
+                                               href="#world-tab-{{ loop.index }}"
+                                               role="tab" aria-controls="world-tab-{{ loop.index }}"
+                                               aria-selected="false">{{ hdrTitle }}</a>
+                                        </li>
+
+                                    {% endif %}
+
+                                {% endfor %}
+
+
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent">
+
+                                {% for hdrTitle in jsoheader %}
+
+                                    {% if loop.index  == 1 %}
+                                        <div class="tab-pane fade show active" id="world-tab-{{ loop.index }}"
+                                             role="tabpane1"
+                                             aria-labelledby="tab{{ loop.index }}">
+                                            <div class="row">
+
+                                                {#Loop#}
+                                                {% for hdrValue in jsovalu %}
+                                                    {% if hdrTitle  == hdrValue.Topic %}
+                                                        <div class="col-12 col-md-6">
+                                                            <!-- Single Blog Post -->
+                                                            <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
+                                                                <!-- Post Thumbnail -->
+                                                                <div class="post-thumbnail">
+                                                                    <img src="{{ hdrValue.Image }}" alt="">
+                                                                </div>
+                                                                <!-- Post Content -->
+                                                                <div class="post-content">
+                                                                    <a href="newsitem/{{ hdrValue.ID }}" class="headline">
+                                                                        <h5>{{ hdrValue.Title }}</h5>
+                                                                    </a>
+                                                                    <!-- Post Meta -->
+                                                                    <div class="post-meta">
+                                                                        <p><a href="#"
+                                                                              class="post-author">{{ hdrValue.Topic }}</a>
+                                                                            on <a href="#"
+                                                                                  class="post-date">{{ hdrValue.Timestamp }}</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="tab-pane fade" id="world-tab-{{ loop.index }}"
+                                             role="tabpane1" aria-labelledby="tab{{ loop.index }}">
+                                            <div class="row">
+
+                                                {#Loop#}
+                                                {% for hdrValue in jsovalu %}
+                                                    {% if hdrTitle  == hdrValue.Topic %}
+                                                        <div class="col-12 col-md-6">
+                                                            <!-- Single Blog Post -->
+                                                            <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
+                                                                <!-- Post Thumbnail -->
+                                                                <div class="post-thumbnail">
+                                                                    <img src="{{ hdrValue.Image }}" alt="">
+                                                                </div>
+                                                                <!-- Post Content -->
+                                                                <div class="post-content">
+                                                                    <a href="newsitem/{{ hdrValue.ID }}" class="headline">
+                                                                        <h5>{{ hdrValue.Title }}</h5>
+                                                                    </a>
+                                                                    <!-- Post Meta -->
+                                                                    <div class="post-meta">
+                                                                        <p><a href="#"
+                                                                              class="post-author">{{ hdrValue.Topic }}</a>
+                                                                            on <a href="#"
+                                                                                  class="post-date">{{ hdrValue.Timestamp }}</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            </div>
+                                        </div>
+                                    {% endif %}
+
+                                {% endfor %}
+
+                            </div>
+                        </div>
+
+
+                        <!-- Catagory Area -->
+                        <div class="world-catagory-area mt-50">
+                            <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                                <li class="title">All News</li>
+
+                                {% set inc = 9 %}
+                                {% for hdrTitle in allheader %}
+
+
+                                   {% set inc = inc+loop.index %}
+
+                                    {% if inc  == 10 %}
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="tab10" data-toggle="tab" href="#world-tab-10"
+                                               role="tab" aria-controls="world-tab-10"
+                                               aria-selected="true">{{ hdrTitle }}</a>
+                                        </li>
+                                        {% else %}
+                                        <li class="nav-item">
+                                             <a class="nav-link" id="tab{{ inc }}" data-toggle="tab" href="#world-tab-{{ inc }}"
+                                               role="tab" aria-controls="world-tab-{{ inc }}"
+                                               aria-selected="true">{{ hdrTitle }}</a>
+                                        </li>
+                                    {% endif %}
+
+                                {% endfor %}
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent2">
+
+                                {% set inc = 9 %}
+                                {% for hdrTitle in allheader %}
+
+
+                                   {% set inc = inc+loop.index %}
+
+                                    {% if inc  == 10 %}
+                                        <div class="tab-pane fade show active" id="world-tab-10"
+                                             role="tabpane1"
+                                             aria-labelledby="tab10">
+                                            <div class="row">
+
+                                                {#Loop#}
+                                                {% for hdrValue in allnews %}
+                                                    {% if hdrTitle  == hdrValue.Topic %}
+                                                        <div class="col-12 col-md-6">
+                                                            <!-- Single Blog Post -->
+                                                            <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
+                                                                <!-- Post Thumbnail -->
+                                                                <div class="post-thumbnail">
+                                                                    <img src="{{ hdrValue.Image }}" alt="">
+                                                                </div>
+                                                                <!-- Post Content -->
+                                                                <div class="post-content">
+                                                                    <a href="newsitem/{{ hdrValue.ID }}" class="headline">
+                                                                        <h5>{{ hdrValue.Title }}</h5>
+                                                                    </a>
+                                                                    <!-- Post Meta -->
+                                                                    <div class="post-meta">
+                                                                        <p><a href="#"
+                                                                              class="post-author">{{ hdrValue.Topic }}</a>
+                                                                            on <a href="#"
+                                                                                  class="post-date">{{ hdrValue.Timestamp }}</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="tab-pane fade" id="world-tab-{{ inc }}"
+                                             role="tabpane1" aria-labelledby="tab{{ inc }}">
+                                            <div class="row">
+
+                                                {#Loop#}
+                                                {% for hdrValue in allnews %}
+                                                    {% if hdrTitle  == hdrValue.Topic %}
+                                                        <div class="col-12 col-md-6">
+                                                            <!-- Single Blog Post -->
+                                                            <div class="single-blog-post post-style-2 d-flex align-items-center mb-1">
+                                                                <!-- Post Thumbnail -->
+                                                                <div class="post-thumbnail">
+                                                                    <img src="{{ hdrValue.Image }}" alt="">
+                                                                </div>
+                                                                <!-- Post Content -->
+                                                                <div class="post-content">
+                                                                    <a href="newsitem/{{ hdrValue.ID }}" class="headline">
+                                                                        <h5>{{ hdrValue.Title }}</h5>
+                                                                    </a>
+                                                                    <!-- Post Meta -->
+                                                                    <div class="post-meta">
+                                                                        <p><a href="#"
+                                                                              class="post-author">{{ hdrValue.Topic }}</a>
+                                                                            on <a href="#"
+                                                                                  class="post-date">{{ hdrValue.Timestamp }}</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            </div>
+                                        </div>
+                                    {% endif %}
+
+                                {% endfor %}
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+<!-- ========== Sidebar Area ========== -->
+                <div class="col-12 col-md-8 col-lg-4">
+
+
+
+                    <div class="post-sidebar-area wow fadeInUpBig" data-wow-delay="0.2s">
+                        <!-- Widget Area -->
+                        <div class="sidebar-widget-area">
+                            <h5 class="title">Google Latest News</h5>
+                            <div class="widget-content">
+                               <div class="feedgrabbr_widget" id="fgid_10573046964a2a299caa6d950"></div>
+<script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array(); fg_widgets.push("fgid_10573046964a2a299caa6d950");</script>
+<script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
+                            </div>
+                        </div>
+
+
+                        <!-- ABC NEWS-->
+                         <!-- Widget Area -->
+                        <div class="sidebar-widget-area">
+                            <h5 class="title">ABC News Just In</h5>
+                            <div class="widget-content">
+
+                                 {% for article in latest %}
+
+                                <!-- Single Blog Post -->
+                                <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <img src={{ article.urlToImage }} alt="">
+                                    </div>
+                                    <!-- Post Content -->
+                                    <div class="post-content">
+{#                                        <a href=latestnewsitem/{{ article.description }} class="headline">#}
+                                         <a href="{{ article.url }}" target="_blank" class="headline">
+                                            <h5 class="mb-0">{{ article.title }}</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+
+
+                            </div>
+                        </div>
+
+
+
+                        <!-- Widget Area -->
+                        <div class="sidebar-widget-area">
+                            <h5 class="title">Stay Connected</h5>
+                            <div class="widget-content">
+                                <div class="social-area d-flex justify-content-between">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    <a href="#"><i class="fa fa-vimeo"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-google"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Widget Area -->
+                        <div class="sidebar-widget-area">
+                            <h5 class="title">Today’s Pick</h5>
+                            <div class="widget-content">
+                                <!-- Single Blog Post -->
+                                <div class="single-blog-post todays-pick">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <img src="static/img/blog-img/b22.jpg" alt="">
+                                    </div>
+                                    <!-- Post Content -->
+                                    <div class="post-content px-0 pb-0">
+                                        <a href="#" class="headline">
+                                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+      
+
+
+
+ <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+                        <div class="copywrite-text mt-30">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <ul class="footer-menu d-flex justify-content-between">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="#">Video</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <h5>Subscribe</h5>
+                        <form action="#" method="post">
+                            <input type="email" name="email" id="email" placeholder="Enter your mail">
+                            <button type="button"><i class="fa fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ***** Footer Area End ***** -->
+
+
+
+{% endblock %}

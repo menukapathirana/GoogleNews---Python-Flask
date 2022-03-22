@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+ 
+<div class="hero-area">
+    <section class="contact-area section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Contact Form Area -->
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="contact-form">
+                        <h5 style="text-align: center">Login</h5>
+                        <!-- Contact Form -->
+                        <form action="" method="POST">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="group">
+                                        <input type="text" id="name" name="username" required value={{request.form.username}}>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Username</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="group">
+                                        <input type="password" id="message" name="password" required value={{request.form.password}}>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Password</label>
+                                    </div>
+                                </div>
+                                <div class="col-12" style="text-align: center">
+                                    <button type="submit" class="btn world-btn">Login</button>
+                                    <div class="hr"></div>
+                                
+					               <a href="/register" style="text-align: center" >New here? Create Account</a>
+                                </div>  
+				            
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps: If you want to google map, just uncomment below codes -->
+    <!--
+    <div class="map-area">
+        <div id="googleMap" class="googleMap"></div>
+    </div>
+    -->
+</div>
+{% endblock %}

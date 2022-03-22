@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+form input:focus ,button:focus{
+    outline: 0;
+}
+.survey
+{
+    margin: 50px;;
+}
+
+.main{
+    width: 60%;
+    	
+    margin:60px auto;
+    
+    padding: 20px 30px;
+}
+.main h1{
+    font-weight: 100;
+    margin-bottom: 38px;
+}
+.main h1 span{
+    color: #EA5354;
+    font-weight: bold;
+}
+.forms,form{
+    overflow: hidden;
+}
+.forms .one ,.forms .one{
+    width: 40%;
+    float: left;
+    margin-right: 2px
+}
+.forms .center{
+    
+    width: 2%;
+    float: left;
+    margin-left: 8%;
+    margin-right: 6%;
+}
+.one h2,.two h2{
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    
+}
+.one label{
+    display: block;
+    color: #EA5354;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.one input[type="submit"],.two button{
+    display: block;
+    float: right;
+   background-color:#EA5455;
+    border: 1px solid #EA5455;
+    color: white;
+    padding: 7px 15px;
+    margin-bottom: 20px; 
+}
+.one p{
+    font-weight: 500;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+hr{
+    display: block;
+    border:0;
+    height: 1px;
+ background-color: #EA5455;
+    margin-bottom: 10px;
+    opacity: 0.7;
+    
+}
+.one p:nth-of-type(2){
+    text-align: left;
+    font-size: 12px;
+    color: #EA5455;
+    font-weight: bold
+}
+.center .parent{
+    width: 1px;
+    position: relative;
+    height: 380px;
+    background-color: #EA5455;
+    opacity: 0.5;
+}
+.center .parent .circle{
+    position: absolute;
+    background-color: white;
+    left: -25px;
+    top: 165px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #EA5455;
+    color: #EA5455;
+    line-height: 50px;
+}
+.two input[type="submit"]{
+    background:none;
+    width: 49%;
+   margin-top: 10px;
+    border: 1px solid #EA5455;
+    display: inline-block;
+    font-weight: bold;
+    color: #EA5455;
+}
+.two input[type="checkbox"]{
+    float: left;
+    width: 5%;
+    margin-right: 5px;
+    margin-top: 38px
+}
+.two button{
+    float: right;
+    margin-top: 28px;
+}
+.two span{
+    font-size: 12px;
+    color: #EA5455;
+    margin-top:45px;
+    font-weight: bold;
+    display: inline-block;
+}
+.eye{
+    position: relative;
+}
+.one i{
+    color:#EA5455;
+    opacity: 0.8;
+    position: absolute;
+    top: 16%;
+  left: 90%;
+}
+.two i{
+     color:#EA5455;
+    opacity: 0.8;
+    position: absolute;
+  top: 16%;
+  left: 90%;
+}
+
+
+

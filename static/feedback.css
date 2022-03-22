@@ -1,0 +1,29 @@
+.boxfeedback{
+        float:left;
+        overflow: hidden;
+        background: #000000;
+    }
+    /* Add padding and border to inner content
+    for better animation effect */
+    .box-inner{
+        width: 400px;
+        text-align:center;
+        padding: 10px;
+        color: white;
+       background: #000000;
+    }
+
+
+
+.slide-toggle{
+                color: white;
+       background: #000000;
+                cursor:pointer;
+                border: none;
+            }
+
+.boxinput{
+    color: white;
+       background: #000000;
+    border: none;
+}

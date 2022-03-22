@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="main-content-wrapper section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- ============= Post Content Area ============= -->
+                <div class="col-12 col-md-8">
+                    <div class="single-blog-content mb-100">
+                        <!-- Post Content -->
+
+                        <div class="post-content">
+                            <a href="#" class="headline"><h2>{{ newsitem.title }}</h2></a>
+                            <div class="post-thumbnail"><img src={{ newsitem.urlToImage }} alt=""></div>
+                            <p>{{ newsitem.description }}</p>
+                            <!-- Post Tags -->
+                            <ul class="post-tags">
+                                <li><a href="#">{{ newsitem.publishedAt }}</a></li>
+
+
+                            </ul>
+                        </div>
+                        <!-- Post Meta -->
+                        <div class="post-meta">
+                            <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                        </div>
+
+                        <section>
+                            <div class="containerc">
+                                <div class="box">
+                                    <i class="fa fa-thumbs-up" id="like"></i>
+                                    <span id="like-counter">{{ ratingdetails.commentLike }}</span>
+                                </div>
+                                <div class="box">
+                                    <i class="fa fa-heart" id="love"></i>
+                                    <span id="love-counter">{{ ratingdetails.commentLove }}</span>
+                                </div>
+                                <div class="box">
+                                    <i class="fa fa-comment"></i>
+                                    <span id="comment-counter">{{ ratingdetails.commentc }}</span>
+                                </div>
+                                <div class="box">
+                                    <input type="text" placeholder="add any comment..." id="comment">
+                                    <button id="add-comment">Add a comment</button>
+                                </div>
+                                <section class="comments" id="comments-container"></section>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <a href="#"><img src="/static/img/core-img/logo.png" alt=""></a>
+                        </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <ul class="footer-menu d-flex justify-content-between">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="#">Video</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="footer-single-widget">
+                        <h5>Subscribe</h5>
+                        <form action="#" method="post">
+                            <input type="email" name="email" id="eemail" placeholder="Enter your mail">
+                            <button type="button"><i class="fa fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

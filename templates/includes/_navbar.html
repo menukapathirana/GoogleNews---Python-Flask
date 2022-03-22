@@ -1,0 +1,67 @@
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="/"><img src="/static/img/core-img/logo.png" alt="Logo"></a>
+                        <!-- Navbar Toggler -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <!-- Navbar -->
+                        <div class="collapse navbar-collapse" id="worldNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articles">News</a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/about">AboutUs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">ContactUs</a>
+                                </li>
+                                
+                                
+                                
+          <ul class="nav navbar-nav navbar-right">
+              {% if session.logged_in %}
+              <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+              <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+              {% else %}
+              <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+               <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+              {% endif %}
+
+          </ul>
+
+                                
+                                
+                            </ul>
+                            <!-- Search Form  -->
+                            <div id="search-wrapper">
+                                <form action="#">
+                                    <input type="text" id="search" placeholder="Search something...">
+                                    <div id="close-icon"></div>
+                                    <input class="d-none" type="submit" value="">
+                                </form>
+                            </div>
+                         
+             
+                            <div class="top-bar" style="padding: 10px;">
+		                      <a class="social-link" href="/user"><i class="fa fa-user"></i></a>
+		                      	<a class="social-link" href="/"><i class="fa fa-twitter"></i></a>
+		                      <a class="social-link" href="/"><i class="fa fa-facebook"></i></a>
+	                       </div>
+            
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->

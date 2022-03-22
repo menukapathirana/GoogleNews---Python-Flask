@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>News Recommendation</title>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">   
+    
+    <!-- Favicon  -->
+    <link rel="icon" href="/static/img/core-img/favicon.ico">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/mystyle.css">
+    <link rel="stylesheet" href="/static/ratinstyle.css">
+    <link rel="stylesheet" href="/static/comment_style.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/feedback.css">
+<link rel="stylesheet" type="text/css" href="static/usermystyle.css">
+
+    
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="world-load"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+    <div class="hero-area">
+
+        <!-- Hero Slides Area -->
+        <div class="hero-slides owl-carousel">
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(/static/img/blog-img/bg2.jpg);"></div>
+            <!-- Single Slide -->
+            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(/static/img/blog-img/bg1.jpg);"></div>
+        </div>
+
+        
+    </div>
+    
+    
+    
+    
+    {% include 'includes/_navbar.html' %}
+    
+    {% block body %}{% endblock %}
+   
+   <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="/static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/static/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="/static/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="/static/js/active.js"></script>
+    <!--News js-->
+   {#Removed#}
+    <!--Preferences-->
+    <script src="/static/js/cat.js"></script>
+    <!--Comment section-->
+    <script src="/static/js/comment.js"></script>
+
+<script src="/static/js/feedback.js"></script>
+
+                                                                       
+</body>
+
+</html>

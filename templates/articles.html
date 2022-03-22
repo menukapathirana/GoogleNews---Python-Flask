@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    
+
+   {# <h1>News Recommendataion</h1>
+    <ul class="list-group">
+        {% for article in articles %}
+            <li class="list-group-item"><a href="article/{{ article.website }}">{{ article.title }}</a> </li>
+            <div>
+            <img src={{ article.images }} style="width:100px;height:100px;">
+            </div>
+        {% endfor %}
+    </ul>
+#}
+     <h1>News Recommendataion</h1>
+    <div id="hello" class="tab-content">
+                {% for article in articles %}
+                    <div class="post-thumbnail">
+			             <div class="tab-pane fade show active" id="world-tab-1" role="tabpanel" aria-labelledby="tab1">
+                            <div class="single-blog-post post-style-4 d-flex align-items-center">
+                                <div class="post-thumbnail">
+                                    <img src={{ article.Image }} alt="">
+                                </div>
+                                <div class="post-content">
+                                    <a href="newsitem/{{ article.ID }}" class="headline">
+                                    <h5>{{ article.Title }}</h5>
+                                    </a>
+                                    <p>{{ article.Description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+    </div>
+
+{% endblock %}
