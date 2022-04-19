@@ -25,7 +25,7 @@ def fuzzy_matching(mapper, fav_movie, verbose=True):
         ratio = fuzz.ratio(title.lower(), fav_movie.lower())
         if ratio >= 60:
             match_tuple.append((title, idx, ratio))
-    # sort
+    # sort items
     match_tuple = sorted(match_tuple, key=lambda x: x[2])[::-1]
     if not match_tuple:
         print('Oops! No match is found')
